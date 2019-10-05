@@ -41,6 +41,11 @@ public class ProductService {
         }
         return productOptional.get();
     }
+
+    public String welcomeMessage(){
+        return "Welcome to product Service. We have "+ productRepository.findAll().size()+ " on the system.";
+    }
+
      public Product updateProduct(Product product){
         return productRepository.save(product);
     }

@@ -3,6 +3,7 @@ package com.example.demoApp.controller;
 import com.example.demoApp.domain.Product;
 import com.example.demoApp.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +42,12 @@ public class ProductController {
 
     @GetMapping("/{productId}")
     public ResponseEntity<Product> getProduct(@RequestParam("productId") Long productId){
-        return ResponseEntity.ok(productService.getProduct(productId));
+        //get product
+        return new ResponseEntity<>(productService.getProduct(productId), HttpStatus.OK);
+    }
+
+    @GetMapping("/home")
+    public ResponseEntity<String> getWelcomeMessage(){
+        return ResponseEntity.ok(productService.welcomeMessage());
     }
 }
