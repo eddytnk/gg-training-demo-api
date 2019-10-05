@@ -41,4 +41,8 @@ public class ProductService {
         }
         return productOptional.get();
     }
+     public Product updateProduct(Product product){
+        return productRepository.save(product);
+    }
+
 }
