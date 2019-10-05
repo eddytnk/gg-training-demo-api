@@ -1,0 +1,9 @@
+{
+  "name":"ProductService",
+  "appType":"jar",
+  "port":"9090",
+  "envs":[
+    {"name":"MY_APP_NAME","value":"ProductService"}
+  ],
+  "services":[]
+}
